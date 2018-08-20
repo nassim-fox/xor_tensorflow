@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>xor</title>
+<link rel="stylesheet" href="{{url_for('static',filename='vends/bootstrap4/css/bootstrap.min.css')}}">
+<script type="text/javascript" src="{{url_for('static',filename='vends/jquery-3.3.1.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static',filename='vends/bootstrap4/js/bootstrap.min.js')}}"></script>
+<link rel="stylesheet" type='text/css' href="{{url_for('static',filename='vends/fontawesome/css/fontawesome-all.css')}}">
+
+</head>
+<body>
+
+
+<div class="card" style="width: 58rem; height : 12rem ; margin-top : 2% ; margin-left : 50px ;  ">
+  <div class="card-body">
+    <h5 class="card-title">The XOR problem</h5>
+    <h6 class="card-subtitle mb-2 text-muted">definition</h6>
+    <p class="card-text">The XOR problem is a calssical problem in ANN research. It is the problem of using a neural network to predict the outputs of XOr logic gates given two binary inputs.</p>
+    <a href="https://medium.com/@jayeshbahire/the-xor-problem-in-neural-networks-50006411840b" class="card-link">The XOR Problem in Neural Networks.</a>
+    <a href="http://www.mind.ilstu.edu/curriculum/artificial_neural_net/xor_problem_and_solution.php" class="card-link">The XOR Problem and Solution
+</a>
+  </div>
+</div>
+
+<button class="btn btn-link"  id="abt" style="position : absolute ; left : 75% ; top : 13% ;"  ><i class="fa fa-question"></i></button>
+
+
+<div class="row bg-light border" style="margin-top : 2% ; margin-left : 50px ; margin-right : 300px ; padding : 20px ;  ">
+<label class="col-sm-2">epochs  </label>
+<input type="number" class="col-sm-3 form-control form-control-sm" id="epochs" style="text-align : center ;" value="{{epochs}}" placeholder="epochs">
+<label class="col-sm-2">training rate</label>
+<input type="number" class="col-sm-3 form-control form-control-sm" id="rate" style="margin-left : 20px ; text-align : center ; " value="{{rate}}" placeholder="training rate">
+<button class="col-sm-1 btn btn-outline-primary" id="cnfg" style="margin-left : 20px ;" ><i class="fa fa-pencil-alt"></i></button>
+</div>
+
+
+<div class="row border" style="margin-top : 20px ; margin-left : 50px ; margin-right : 100px ; padding : 20px ;  ">
+<input type="number"  min='0' max='1' class="col-sm-4 form-control form-control-sm" id="input_a">
+<input type="number"  min='0' max='1' class="col-sm-4 form-control form-control-sm" id="input_b" style="margin-left : 20px ;">
+<input type="submit" class="col-sm-2 btn btn-outline-primary" id="ok" value="xor" style="margin-left : 20px ;" >
+</div>
+
+<div class="row" style="margin-top : 10px ; margin-left : 50px ; margin-right : 100px ; padding : 10px ;  ">
+  
+  <label class="col-sm-3">result</i></label>
+  <label class="col-sm-3" id="result">{{result}}</label>
+</div>
+
+<div class="row" style="margin-top : 10px ; margin-left : 50px ; margin-right : 100px ; padding : 10px ;  ">
+  
+  <label class="col-sm-3">cost</label>
+  <label class="col-sm-3" id="cost">{{cost}}</label>
+  <img class="col-sm-6" id="gf"  src="{{url_for('static',filename='gf.gif')}}" style="position : absolute ; top : 67% ; left : 50% ; width : 200px ; display : none ; ">
+
+
+</div>
+
+{% include 'alerts.html' %}
+
+{% include 'inf.html' %}
+
+{% include 'footer.html' %}
+
+
+<script type="text/javascript" src="{{url_for('static',filename='js/xor_web.js')}}"></script>
+
+</body>
+</html>
